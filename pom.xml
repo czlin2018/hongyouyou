@@ -13,6 +13,7 @@
         <module>rocketmq</module>
         <module>business</module>
         <module>privileges</module>
+        <module>base</module>
     </modules>
 
     <groupId>com.lin</groupId>
@@ -21,11 +22,6 @@
     <version>0.0.1</version>
     <name>hongyouyouweb</name>
     <description>hongyouyouweb</description>
-
-    <!--注:父pom只管理全局版本,不管理dependencies-->
-    <properties>
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -38,5 +34,18 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <!--注:父pom只管理全局版本,不管理dependencies-->
+    <properties>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+
+    <!--自主模块-->
+        <czl-rocketmq>0.0.1-SNAPSHOT</czl-rocketmq>
+        <czl-business>0.0.1-SNAPSHOT</czl-business>
+        <czl-privileges>0.0.1-SNAPSHOT</czl-privileges>
+        <czl-base>0.0.1-SNAPSHOT</czl-base>
+    </properties>
+
+
 
 </project>

@@ -8,11 +8,10 @@
         <version>0.0.1</version>
     </parent>
     <groupId>com.czl</groupId>
-    <artifactId>business</artifactId>
+    <artifactId>base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <name>business</name>
-    <description>业务模块</description>
+    <name>base</name>
+    <description>base基础包，用于存放基础类，通用工具类</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -23,6 +22,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -34,12 +34,25 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--lombok-->
         <dependency>
-            <groupId>com.czl</groupId>
-            <artifactId>base</artifactId>
-            <version>${czl-base}</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!--date-->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.9.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
