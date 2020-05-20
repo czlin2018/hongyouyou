@@ -11,6 +11,8 @@
     </parent>
     <modules>
         <module>rocketmq</module>
+        <module>business</module>
+        <module>privileges</module>
     </modules>
 
     <groupId>com.lin</groupId>

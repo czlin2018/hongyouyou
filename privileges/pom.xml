@@ -8,11 +8,10 @@
 		<version>0.0.1</version>
 	</parent>
 	<groupId>com.czl</groupId>
-	<artifactId>rocketmq</artifactId>
+	<artifactId>privileges</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<name>rocketmq</name>
-	<description>RocketMQ模块</description>
+	<name>privileges</name>
+	<description>权限模块</description>
 
 	<properties>
 		<java.version>1.8</java.version>
