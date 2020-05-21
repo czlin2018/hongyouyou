@@ -38,7 +38,9 @@
     <!--注:父pom只管理全局版本,不管理dependencies-->
     <properties>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-
+        <joda-time.version>2.9.9</joda-time.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-codec.version>1.14</commons-codec.version>
     <!--自主模块-->
         <czl-rocketmq>0.0.1-SNAPSHOT</czl-rocketmq>
         <czl-business>0.0.1-SNAPSHOT</czl-business>
