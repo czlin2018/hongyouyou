@@ -6,7 +6,7 @@
 ##### 已有模块
 ```
 businsee : 业务模块
-rocketmq : rocketmq消息队列
+rabbitmq : rabbitmq消息队列
 privileges : 权限模块
 base : 基础类模块
 ```

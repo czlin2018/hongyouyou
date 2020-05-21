@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
     <modules>
-        <module>rocketmq</module>
+        <module>rabbitmq</module>
         <module>business</module>
         <module>privileges</module>
         <module>base</module>
@@ -42,7 +42,7 @@
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-codec.version>1.14</commons-codec.version>
     <!--自主模块-->
-        <czl-rocketmq>0.0.1-SNAPSHOT</czl-rocketmq>
+        <czl-rabbitmq>0.0.1-SNAPSHOT</czl-rabbitmq>
         <czl-business>0.0.1-SNAPSHOT</czl-business>
         <czl-privileges>0.0.1-SNAPSHOT</czl-privileges>
         <czl-base>0.0.1-SNAPSHOT</czl-base>
