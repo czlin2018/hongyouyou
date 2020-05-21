@@ -1,2 +1,12 @@
 server:
   port: 8081
+
+spring:
+  #配置rabbitMq 服务器
+  rabbitmq:
+    host: 123.57.76.15
+    port: 5672
+    username: czl
+    password: czl
+    #虚拟host 可以不设置,使用server默认host
+    virtual-host: JCcccHost
