@@ -8,5 +8,4 @@ spring:
     port: 5672
     username: admin
     password: admin
-    #虚拟host 可以不设置,使用server默认host
     virtual-host: /

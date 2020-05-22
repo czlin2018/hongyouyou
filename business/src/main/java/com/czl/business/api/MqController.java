@@ -1,4 +1,4 @@
-package com.czl.rabbitmq.api;
+package com.czl.business.api;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import java.util.UUID;
  * @创建时间: 18:16
  */
 @RestController
-public class SendMessageController {
+public class MqController {
 
     @Autowired
     RabbitTemplate rabbitTemplate;  //使用RabbitTemplate,这提供了接收/发送等等方法
