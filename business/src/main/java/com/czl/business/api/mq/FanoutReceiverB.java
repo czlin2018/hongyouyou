@@ -18,7 +18,7 @@ public class FanoutReceiverB {
 
     @RabbitHandler
     public void process (String testMessage) {
-        System.out.println("FanoutReceiverB消费者收到消息  : " + testMessage.toString());
+        System.out.println("FanoutReceiverB消费者收到消息  : " + testMessage);
     }
 
 }

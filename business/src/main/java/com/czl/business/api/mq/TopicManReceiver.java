@@ -18,6 +18,6 @@ public class TopicManReceiver {
 
     @RabbitHandler
     public void process (String testMessage) {
-        System.out.println("TopicManReceiver消费者收到消息  : " + testMessage.toString());
+        System.out.println("TopicManReceiver消费者收到消息  : " + testMessage);
     }
 }
