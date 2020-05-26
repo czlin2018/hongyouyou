@@ -1,4 +1,4 @@
-package com.czl.rabbitmq.api;
+package com.czl.business.api.mq;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -10,15 +10,17 @@ import java.util.Map;
  * @描述:
  * @公司: lumi
  * @author: 泽林
- * @创建日期: 2020-05-21
- * @创建时间: 18:31
+ * @创建日期: 2020-05-26
+ * @创建时间: 18:03
  */
+
 @Component
-@RabbitListener (queues = "TestDirectQueue")//监听的队列名称 TestDirectQueue
-public class DirectReceiver {
+@RabbitListener ( queues = "fanout.B" )
+public class FanoutReceiverB {
 
     @RabbitHandler
     public void process (Map testMessage) {
-        System.out.println("消费者收到消息  : " + testMessage.toString());
+        System.out.println("FanoutReceiverB消费者收到消息  : " + testMessage.toString());
     }
+
 }
