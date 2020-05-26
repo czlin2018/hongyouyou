@@ -22,7 +22,7 @@ public class MqController {
     @GetMapping ( "/sendDirectMessage" )
     public String sendDirectMessage () {
         String message = "直连";
-        rabbitTemplate.convertAndSend("TestDirectExchange", "TestDirectRouting", message);
+        rabbitTemplate.convertAndSend("DirectExchange", "DirectRouting", message);
         return "ok";
     }
 
