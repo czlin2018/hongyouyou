@@ -12,7 +12,7 @@ import javax.validation.constraints.NotBlank;
  * @创建时间: 11:34
  */
 @Data
-public class User {
+public class UserDTO {
 
     @NotBlank
     private String name;
