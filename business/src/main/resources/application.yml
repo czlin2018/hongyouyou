@@ -14,3 +14,12 @@ spring:
     url: jdbc:mysql://123.57.76.15:3306/hongyouyou?useAffectedRows=true&serverTimezone=Asia/Shanghai&useUnicode=true&useSSL=false&autoReconnect=true&characterEncoding=UTF-8&allowMultiQueries=true&rewriteBatchedStatements=true
     username: root
     password: root
+
+logging:
+  level:
+    com.czl.business: debug
+
+
+    #    服务器 123.57.76.15 root 111044czl..
+    #    mysql  123.57.76.15:3306 root root
+    #    rabbitMq服务器 http://123.57.76.15:15672/#
