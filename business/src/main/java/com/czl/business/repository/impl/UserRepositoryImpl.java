@@ -1,10 +1,13 @@
 package com.czl.business.repository.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.czl.business.entity.User;
 import com.czl.business.mapper.UserMapper;
 import com.czl.business.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @描述:
@@ -22,5 +25,15 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public int insert (User user) {
         return userMapper.insert(user);
+    }
+
+    @Override
+    public List<User> selectAll (User user) {
+        return userMapper.selectList(new QueryWrapper<>(user));
+    }
+
+    @Override
+    public User selectOne (User user) {
+        return userMapper.selectOne(new QueryWrapper<>(user));
     }
 }

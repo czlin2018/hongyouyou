@@ -2,6 +2,8 @@ package com.czl.business.repository;
 
 import com.czl.business.entity.User;
 
+import java.util.List;
+
 /**
  * @描述:
  * @公司: lumi
@@ -12,4 +14,8 @@ import com.czl.business.entity.User;
 public interface UserRepository {
 
     int insert (User user);
+
+    List<User> selectAll (User user);
+
+    User selectOne (User user);
 }
