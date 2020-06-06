@@ -42,6 +42,7 @@
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-codec.version>1.14</commons-codec.version>
         <mybatisplus.version>3.1.1</mybatisplus.version>
+        <feign.version>1.4.7.RELEASE</feign.version>
     <!--自主模块-->
         <czl-rabbitmq>0.0.1-SNAPSHOT</czl-rabbitmq>
         <czl-business>0.0.1-SNAPSHOT</czl-business>
