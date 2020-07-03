@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @描述:
+ * userController
+ * @描述: userController
  * @公司: lumi
  * @author: 泽林
  * @创建日期: 2020-05-20
@@ -22,6 +23,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 客户登录
+     *
+     * @return
+     */
     @GetMapping ( "/user/login" )
     public ApiResponse<ApiBaseEnum> login () {
         ApiBaseEnum apiBaseEnum = userService.insert();
