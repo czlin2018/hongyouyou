@@ -5,7 +5,7 @@
 
     #    服务器 123.57.76.15 root 111044czl..  
     #    mysql  123.57.76.15:3306 root root
-    #    rabbitMq服务器 http://123.57.76.15:15672/#
+    #    rabbitMq服务器 http://123.57.76.15:15672/# sdmin admin
     #    yapi  http://123.57.76.15:3000/ 111044czl..
 ```
 
