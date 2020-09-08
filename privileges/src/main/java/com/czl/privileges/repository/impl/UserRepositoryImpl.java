@@ -16,7 +16,7 @@ import java.util.List;
  * @创建日期: 2020-05-28
  * @创建时间: 16:29
  */
-@Repository(value = "UserRepository")
+@Repository(value = "userRepository")
 public class UserRepositoryImpl implements UserRepository {
 
     @Autowired
