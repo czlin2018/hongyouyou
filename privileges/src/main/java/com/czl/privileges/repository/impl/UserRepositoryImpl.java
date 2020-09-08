@@ -1,9 +1,9 @@
-package com.czl.business.repository.impl;
+package com.czl.privileges.repository.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.czl.business.entity.User;
-import com.czl.business.mapper.UserMapper;
-import com.czl.business.repository.UserRepository;
+import com.czl.privileges.entity.User;
+import com.czl.privileges.mapper.UserMapper;
+import com.czl.privileges.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,24 +16,24 @@ import java.util.List;
  * @创建日期: 2020-05-28
  * @创建时间: 16:29
  */
-@Repository ( value = "UserRepository" )
+@Repository(value = "UserRepository")
 public class UserRepositoryImpl implements UserRepository {
 
     @Autowired
     private UserMapper userMapper;
 
     @Override
-    public int insert (User user) {
+    public int insert(User user) {
         return userMapper.insert(user);
     }
 
     @Override
-    public List<User> selectAll (User user) {
+    public List< User > selectAll(User user) {
         return userMapper.selectList(new QueryWrapper<>(user));
     }
 
     @Override
-    public User selectOne (User user) {
+    public User selectOne(User user) {
         return userMapper.selectOne(new QueryWrapper<>(user));
     }
 }

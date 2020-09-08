@@ -1,4 +1,4 @@
-package com.czl.business.service;
+package com.czl.privileges.service;
 
 import com.czl.base.response.enums.ApiBaseEnum;
 
@@ -11,6 +11,6 @@ import com.czl.base.response.enums.ApiBaseEnum;
  */
 public interface UserService {
 
-    ApiBaseEnum insert ();
+    ApiBaseEnum insert();
 
 }
