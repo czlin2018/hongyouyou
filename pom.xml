@@ -15,6 +15,7 @@
         <module>privileges</module>
         <module>eureka</module>
         <module>base</module>
+        <module>gateway</module>
     </modules>
 
     <groupId>com.lin</groupId>
