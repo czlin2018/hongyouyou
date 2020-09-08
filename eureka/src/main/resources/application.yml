@@ -1,19 +1,15 @@
 server:
   port: 8761
 
-  # 服务名
-spring:
-  application:
-    name: eureka
-
-    # eureka
-  eureka:
-    instance:
-      hostname: 127.0.0.1         # 指定该Eureka实例的主机名
-    client:
-      registerWithEureka: false    #自身注册到Eureka Server上，默认为true
-      fetchRegistry: false   #从其他Eureka Server获取注册信息，单节点设置为false，集群情况下可设置为true
-      serviceUrl:
-        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #多个地址用逗号分割，单节点可不配置
-    server:
-      enable-self-preservation: false   #调试时关闭eureka注册中心的保护机制
+#eueka 主机名
+eureka:
+  instance:
+    hostname: eureka-service
+  client:
+    #不注册自己
+    register-with-eureka: false
+    #获取服务
+    fetch-registry: false
+    #提供者和消费者的注册地址
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
