@@ -1,4 +1,4 @@
-package com.czl.base.IdProdect;
+package com.czl.base.idprodect;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;

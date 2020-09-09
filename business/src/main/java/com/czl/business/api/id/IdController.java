@@ -1,6 +1,6 @@
 package com.czl.business.api.id;
 
-import com.czl.base.IdProdect.SnowFlakeId;
+import com.czl.base.idprodect.SnowFlakeId;
 import com.czl.base.response.ApiResponse;
 import com.czl.business.dto.IdDTO;
 import org.springframework.validation.annotation.Validated;
