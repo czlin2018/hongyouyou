@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
+import lombok.*;
 
 /**
  * @描述:
@@ -14,7 +14,11 @@ import lombok.Data;
  * @创建日期: 2020-05-28
  * @创建时间: 16:28
  */
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @TableName(value = "role")
 public class Role {
 

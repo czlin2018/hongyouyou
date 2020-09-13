@@ -30,6 +30,13 @@ public interface RoleInterfaceRelationshipRepository {
     List< RoleInterfaceRelationship > selectAll ( RoleInterfaceRelationship relationship );
 
     /**
+     * 查询全部
+     * @param roleIds
+     * @return
+     */
+    List< RoleInterfaceRelationship > selectAllByRoleIds ( List<Long> roleIds );
+
+    /**
      * 查询单个
      * @param relationship
      * @return

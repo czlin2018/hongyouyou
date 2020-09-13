@@ -35,4 +35,11 @@ public interface InterfacesRepository {
      * @return
      */
     Interfaces selectOne ( Interfaces interfaces );
+
+    /**
+     * 根据接口id获取数据
+     * @param interfacesIds
+     * @return
+     */
+    List<Interfaces> getAllByInterfacesIds ( List<Long> interfacesIds );
 }

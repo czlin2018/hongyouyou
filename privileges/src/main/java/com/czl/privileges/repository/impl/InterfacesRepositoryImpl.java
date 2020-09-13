@@ -11,6 +11,7 @@ import com.czl.privileges.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -40,5 +41,12 @@ public class InterfacesRepositoryImpl implements InterfacesRepository {
     @Override
     public Interfaces selectOne(Interfaces interfaces) {
         return interfacesMapper.selectOne(new QueryWrapper<>(interfaces));
+    }
+
+    @Override
+    public List<Interfaces> getAllByInterfacesIds ( List<Long> interfacesIds ){
+        QueryWrapper<Interfaces> objectQueryWrapper = new QueryWrapper<> ( );
+        objectQueryWrapper.in ( "interface_id",interfacesIds );
+        return interfacesIds.size ()<1? Collections.EMPTY_LIST: interfacesMapper.selectList(objectQueryWrapper);
     }
 }

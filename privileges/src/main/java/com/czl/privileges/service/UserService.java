@@ -2,6 +2,9 @@ package com.czl.privileges.service;
 
 import com.czl.base.response.enums.ApiBaseEnum;
 import com.czl.privileges.dto.UserInsertDto;
+import com.czl.privileges.vo.UserInterfacePathVO;
+
+import java.util.List;
 
 /**
  * @描述:
@@ -19,4 +22,10 @@ public interface UserService {
      */
     ApiBaseEnum insert( UserInsertDto userInsertDto);
 
+    /**
+     * 根据用户id获得接口权限
+     * @param userId
+     * @return
+     */
+    List<String> getInterfacePathByUserId ( Long userId );
 }
