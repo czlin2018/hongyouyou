@@ -12,6 +12,11 @@ import com.czl.privileges.dto.UserInsertDto;
  */
 public interface UserService {
 
+    /**
+     * 新增用户
+     * @param userInsertDto
+     * @return
+     */
     ApiBaseEnum insert( UserInsertDto userInsertDto);
 
 }

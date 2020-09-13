@@ -15,8 +15,8 @@ import lombok.Data;
  * @创建时间: 16:28
  */
 @Data
-@TableName(value = "user")
-public class User {
+@TableName(value = "user_role_relationship")
+public class UserRoleRelationship {
 
     /**
      * 主键id
@@ -31,20 +31,9 @@ public class User {
     private Long userId;
 
     /**
-     * 用户名
+     * 角色id
      */
-    @TableField(value = "user_name")
-    private String userName;
+    @TableField(value = "role_id")
+    private Long roleId;
 
-    /**
-     * 用户账号
-     */
-    @TableField(value = "user_account")
-    private String userAccount;
-
-    /**
-     * 用户密码
-     */
-    @TableField(value = "user_password")
-    private String userPassword;
 }

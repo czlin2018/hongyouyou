@@ -1,6 +1,7 @@
 package com.czl.privileges.repository;
 
 
+import com.czl.privileges.entity.Interfaces;
 import com.czl.privileges.entity.User;
 
 import java.util.List;
@@ -12,26 +13,26 @@ import java.util.List;
  * @创建日期: 2020-05-28
  * @创建时间: 16:29
  */
-public interface UserRepository {
+public interface InterfacesRepository {
 
     /**
-     * 新增用户
-     * @param user
+     * 新增
+     * @param interfaces
      * @return
      */
-    int insert(User user);
+    int insert ( Interfaces interfaces);
 
     /**
      * 查询全部
-     * @param user
+     * @param interfaces
      * @return
      */
-    List< User > selectAll(User user);
+    List< Interfaces > selectAll ( Interfaces interfaces );
 
     /**
      * 查询单个
-     * @param user
+     * @param interfaces
      * @return
      */
-    User selectOne(User user);
+    Interfaces selectOne ( Interfaces interfaces );
 }

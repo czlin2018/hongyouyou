@@ -15,8 +15,8 @@ import lombok.Data;
  * @创建时间: 16:28
  */
 @Data
-@TableName(value = "user")
-public class User {
+@TableName(value = "interface")
+public class Interfaces {
 
     /**
      * 主键id
@@ -25,26 +25,21 @@ public class User {
     private Integer id;
 
     /**
-     * 用户id
+     * 接口id
      */
-    @TableField(value = "user_id")
-    private Long userId;
+    @TableField(value = "interface_id")
+    private Long interfaceId;
 
     /**
-     * 用户名
+     * 接口名字
      */
-    @TableField(value = "user_name")
-    private String userName;
+    @TableField(value = "interface_name")
+    private String interfaceName;
 
     /**
-     * 用户账号
+     * 接口路径
      */
-    @TableField(value = "user_account")
-    private String userAccount;
+    @TableField(value = "interface_path")
+    private String interfacePath;
 
-    /**
-     * 用户密码
-     */
-    @TableField(value = "user_password")
-    private String userPassword;
 }
