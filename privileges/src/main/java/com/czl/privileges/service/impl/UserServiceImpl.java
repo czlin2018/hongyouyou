@@ -2,6 +2,8 @@ package com.czl.privileges.service.impl;
 
 import com.czl.base.response.enums.ApiBaseEnum;
 import com.czl.base.response.enums.ApiResponseEnum;
+import com.czl.base.util.BeanCopyUtil;
+import com.czl.privileges.dto.UserInsertDto;
 import com.czl.privileges.entity.User;
 import com.czl.privileges.repository.UserRepository;
 import com.czl.privileges.service.UserService;
@@ -25,10 +27,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public ApiBaseEnum insert() {
-        User user = new User();
-        user.setUserId((long) 1);
-        user.setUserName("user1");
+    public ApiBaseEnum insert( UserInsertDto userInsertDto) {
+        User user = BeanCopyUtil.copy ( User.class , userInsertDto );
         int insert = userRepository.insert(user);
         return insert > 0 ? ApiResponseEnum.SUCCESS : ApiResponseEnum.FAIL;
     }

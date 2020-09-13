@@ -1,6 +1,7 @@
 package com.czl.privileges.service;
 
 import com.czl.base.response.enums.ApiBaseEnum;
+import com.czl.privileges.dto.UserInsertDto;
 
 /**
  * @描述:
@@ -11,6 +12,6 @@ import com.czl.base.response.enums.ApiBaseEnum;
  */
 public interface UserService {
 
-    ApiBaseEnum insert();
+    ApiBaseEnum insert( UserInsertDto userInsertDto);
 
 }

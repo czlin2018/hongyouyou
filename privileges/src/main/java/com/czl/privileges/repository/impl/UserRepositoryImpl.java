@@ -1,6 +1,7 @@
 package com.czl.privileges.repository.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.czl.base.idprodect.SnowFlakeId;
 import com.czl.privileges.entity.User;
 import com.czl.privileges.mapper.UserMapper;
 import com.czl.privileges.repository.UserRepository;
@@ -24,6 +25,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public int insert(User user) {
+        user.setUserId ( SnowFlakeId.generateId () );
         return userMapper.insert(user);
     }
 

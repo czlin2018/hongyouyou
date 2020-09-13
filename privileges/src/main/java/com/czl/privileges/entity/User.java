@@ -34,4 +34,16 @@ public class User {
      */
     @TableField(value = "user_name")
     private String userName;
+
+    /**
+     * 用户账号
+     */
+    @TableField(value = "user_account")
+    private String userAccount;
+
+    /**
+     * 用户密码
+     */
+    @TableField(value = "user_password")
+    private String userPassword;
 }
