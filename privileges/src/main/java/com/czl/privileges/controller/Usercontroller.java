@@ -3,7 +3,9 @@ package com.czl.privileges.controller;
 import com.czl.base.response.ApiResponse;
 import com.czl.base.response.enums.ApiBaseEnum;
 import com.czl.privileges.dto.AuthenticationDTO;
-import com.czl.privileges.dto.UserInsertDto;
+import com.czl.privileges.dto.UserInsertDTO;
+import com.czl.privileges.dto.UserLoginDTO;
+import com.czl.privileges.entity.User;
 import com.czl.privileges.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,9 +33,21 @@ public class Usercontroller {
      * @return
      */
     @PostMapping( "/insert" )
-    public ApiResponse addUser ( @RequestBody UserInsertDto userInsertDto) {
+    public ApiResponse addUser(@RequestBody UserInsertDTO userInsertDto) {
         ApiBaseEnum apiBaseEnum = userService.insert ( userInsertDto );
         return ApiResponse.respond(apiBaseEnum);
+    }
+
+    /**
+     * 登录
+     *
+     * @param userLoginDTO
+     * @return
+     */
+    @PostMapping("/login")
+    public ApiResponse< User > login(@RequestBody UserLoginDTO userLoginDTO) {
+        User user = userService.login(userLoginDTO);
+        return ApiResponse.respond(user);
     }
 
     /**

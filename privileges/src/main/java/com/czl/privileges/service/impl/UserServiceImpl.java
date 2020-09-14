@@ -1,10 +1,12 @@
 package com.czl.privileges.service.impl;
 
+import com.czl.base.request.BizException;
 import com.czl.base.response.enums.ApiBaseEnum;
 import com.czl.base.response.enums.ApiResponseEnum;
 import com.czl.base.util.BeanCopyUtil;
 import com.czl.privileges.dto.AuthenticationDTO;
-import com.czl.privileges.dto.UserInsertDto;
+import com.czl.privileges.dto.UserInsertDTO;
+import com.czl.privileges.dto.UserLoginDTO;
 import com.czl.privileges.entity.Interfaces;
 import com.czl.privileges.entity.RoleInterfaceRelationship;
 import com.czl.privileges.entity.User;
@@ -46,7 +48,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public ApiBaseEnum insert( UserInsertDto userInsertDto) {
+    public ApiBaseEnum insert(UserInsertDTO userInsertDto) {
         User user = BeanCopyUtil.copy ( User.class , userInsertDto );
         int insert = userRepository.insert(user);
         return insert > 0 ? ApiResponseEnum.SUCCESS : ApiResponseEnum.FAIL;
@@ -70,5 +72,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean authentication(AuthenticationDTO dto) {
         return getInterfacePathByUserId(dto.getUserId()).contains(dto.getInterfacePath());
+    }
+
+    @Override
+    public User login(UserLoginDTO dto) {
+        User user = userRepository.selectOne(User.builder().userAccount(dto.getUserAccount()).userPassword(dto.getUserPassword()).build());
+        if (null == user) {
+            throw new BizException(ApiResponseEnum.ILLEGAL_USER);
+        }
+        return user;
     }
 }

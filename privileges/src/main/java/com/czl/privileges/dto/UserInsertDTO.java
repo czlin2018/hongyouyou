@@ -1,8 +1,5 @@
 package com.czl.privileges.dto;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 /**
@@ -14,7 +11,7 @@ import lombok.Data;
  * @创建时间: 17:14
  */
 @Data
-public class UserInsertDto {
+public class UserInsertDTO {
 
     /**
      * 用户名

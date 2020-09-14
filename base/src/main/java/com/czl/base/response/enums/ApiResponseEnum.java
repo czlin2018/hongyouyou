@@ -18,9 +18,14 @@ public enum ApiResponseEnum implements ApiBaseEnum {
     SUCCESS(200, "SUCCESS", "操作成功"),
 
     /**
-     * 公共错误码601-非法参数
+     * 公共错误码201-非法参数
      */
-    PARAMETER_INVALID(601, "PARAMETER INVALID", "非法参数");
+    PARAMETER_INVALID(201, "PARAMETER INVALID", "非法参数"),
+
+    /**
+     * 公共错误码202-非法用户
+     */
+    ILLEGAL_USER(202, "ILLEGAL USER", "非法用户");
 
     /**
      * api响应code码
