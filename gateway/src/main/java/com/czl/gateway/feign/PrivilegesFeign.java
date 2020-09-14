@@ -20,7 +20,7 @@ public interface PrivilegesFeign {
     /**
      * 根据用户id查询全部的接口权限
      */
-    @GetMapping("/user/userId/getInterfacePath")
+    @GetMapping("/privileges/user/userId/getInterfacePath")
     ApiResponse< List< String > > getInterfacePathByUserId(@RequestParam Long userId);
 
 

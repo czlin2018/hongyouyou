@@ -1,6 +1,8 @@
 #端口号
 server:
   port: 8082
+  servlet:
+    context-path: /business
 
 #服务名
 spring:

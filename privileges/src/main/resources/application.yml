@@ -1,6 +1,8 @@
 #端口号
 server:
   port: 8083
+  servlet:
+    context-path: /privileges
 
 #服务名
 spring:

@@ -1,5 +1,7 @@
 server:
   port: 8086
+  servlet:
+    context-path: /gateway
 
 #服务名
 spring:
@@ -17,4 +19,16 @@ eureka:
 logging:
   level:
     com.czl.gateway: debug
+
+zuul:
+  routes:
+    #权限
+    privileges.path: /privileges/**
+    privileges.serviceId: privileges
+    privileges.strip-prefix: false
+    #业务
+    business.path: /business/**
+    business.serviceId: business
+    business.strip-prefix: false
+
 
