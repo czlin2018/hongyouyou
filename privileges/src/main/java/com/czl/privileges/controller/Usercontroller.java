@@ -1,11 +1,10 @@
 package com.czl.privileges.controller;
 
-import com.czl.base.idprodect.SnowFlakeId;
 import com.czl.base.response.ApiResponse;
 import com.czl.base.response.enums.ApiBaseEnum;
+import com.czl.privileges.dto.AuthenticationDTO;
 import com.czl.privileges.dto.UserInsertDto;
 import com.czl.privileges.service.UserService;
-import com.czl.privileges.vo.UserInterfacePathVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,6 +44,18 @@ public class Usercontroller {
     @GetMapping( "/userId/getInterfacePath" )
     public ApiResponse<List<String>> getInterfacePathByUserId ( Long userId) {
         List<String> result= userService.getInterfacePathByUserId ( userId );
+        return ApiResponse.respond(result);
+    }
+
+    /**
+     * 查询用户是否有某接口的权限
+     *
+     * @param authenticationDTO
+     * @return
+     */
+    @PostMapping("/authentication")
+    public ApiResponse< Boolean > authentication(AuthenticationDTO authenticationDTO) {
+        Boolean result = userService.authentication(authenticationDTO);
         return ApiResponse.respond(result);
     }
 

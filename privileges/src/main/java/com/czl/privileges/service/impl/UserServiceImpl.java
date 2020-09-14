@@ -3,6 +3,7 @@ package com.czl.privileges.service.impl;
 import com.czl.base.response.enums.ApiBaseEnum;
 import com.czl.base.response.enums.ApiResponseEnum;
 import com.czl.base.util.BeanCopyUtil;
+import com.czl.privileges.dto.AuthenticationDTO;
 import com.czl.privileges.dto.UserInsertDto;
 import com.czl.privileges.entity.Interfaces;
 import com.czl.privileges.entity.RoleInterfaceRelationship;
@@ -10,13 +11,11 @@ import com.czl.privileges.entity.User;
 import com.czl.privileges.entity.UserRoleRelationship;
 import com.czl.privileges.repository.*;
 import com.czl.privileges.service.UserService;
-import com.czl.privileges.vo.UserInterfacePathVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -66,5 +65,10 @@ public class UserServiceImpl implements UserService {
 
         //获取接口
         return interfacesRepository.getAllByInterfacesIds ( interfaceIds ).stream ().map ( Interfaces ::getInterfacePath ).collect( Collectors.toList());
+    }
+
+    @Override
+    public Boolean authentication(AuthenticationDTO dto) {
+        return getInterfacePathByUserId(dto.getUserId()).contains(dto.getInterfacePath());
     }
 }

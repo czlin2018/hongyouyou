@@ -1,8 +1,8 @@
 package com.czl.privileges.service;
 
 import com.czl.base.response.enums.ApiBaseEnum;
+import com.czl.privileges.dto.AuthenticationDTO;
 import com.czl.privileges.dto.UserInsertDto;
-import com.czl.privileges.vo.UserInterfacePathVO;
 
 import java.util.List;
 
@@ -28,4 +28,13 @@ public interface UserService {
      * @return
      */
     List<String> getInterfacePathByUserId ( Long userId );
+
+    /**
+     * 查询用户是否有某接口的权限
+     *
+     * @param authenticationDTO
+     * @return
+     */
+    Boolean authentication(AuthenticationDTO authenticationDTO);
+
 }
