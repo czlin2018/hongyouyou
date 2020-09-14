@@ -53,6 +53,12 @@
             <version>${feign.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.czl</groupId>
+            <artifactId>base</artifactId>
+            <version>${czl-base}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
