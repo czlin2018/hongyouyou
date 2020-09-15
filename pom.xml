@@ -18,7 +18,7 @@
         <module>gateway</module>
     </modules>
 
-    <groupId>com.lin</groupId>
+    <groupId>com.czl</groupId>
     <artifactId>hongyouyou</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1</version>
@@ -52,6 +52,8 @@
         <czl-business>0.0.1-SNAPSHOT</czl-business>
         <czl-privileges>0.0.1-SNAPSHOT</czl-privileges>
         <czl-base>0.0.1-SNAPSHOT</czl-base>
+        <czl-eureka>0.0.1-SNAPSHOT</czl-eureka>
+        <czl-gateway>0.0.1-SNAPSHOT</czl-gateway>
     </properties>
 
     <build>

@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.lin</groupId>
+        <groupId>com.czl</groupId>
         <artifactId>hongyouyou</artifactId>
         <version>0.0.1</version>
     </parent>
-    <groupId>com.czl</groupId>
+    <groupId>com.czl.business</groupId>
     <artifactId>business</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${czl-business}</version>
     <packaging>jar</packaging>
     <name>business</name>
     <description>业务模块</description>
@@ -35,7 +35,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.czl</groupId>
+            <groupId>com.czl.base</groupId>
             <artifactId>base</artifactId>
             <version>${czl-base}</version>
         </dependency>
