@@ -14,13 +14,6 @@ import java.util.*;
  */
 public class 树 {
 
-    @Data
-  public static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
     public static void main(String[] args) {
         TreeNode treeNode2 = new TreeNode(2);
         TreeNode treeNode1 = new TreeNode(1);
@@ -36,11 +29,11 @@ public class 树 {
         前序(treeNode2, s);
         System.out.println(s);
 
-         s = new ArrayList<>();
+        s = new ArrayList<>();
         中序(treeNode2, s);
         System.out.println(s);
 
-         s = new ArrayList<>();
+        s = new ArrayList<>();
         后序(treeNode2, s);
         System.out.println(s);
 
@@ -54,93 +47,106 @@ public class 树 {
 
         s = new ArrayList<>();
         TreeNode 反转1 = 反转1(treeNode2);
-        中序(反转1,s);
+        中序(反转1, s);
         System.out.println(s);
 
         s = new ArrayList<>();
         TreeNode 反转2 = 反转2(treeNode2);
-        中序(反转2,s);
+        中序(反转2, s);
         System.out.println(s);
 
     }
 
     /**
      * 根结点 —> 左子树 —> 右子树
+     *
      * @param node
      * @param s
      */
-    public static void 前序(TreeNode node,List<Integer> s) {
-        if (node == null)
+    private static void 前序(TreeNode node, List<Integer> s) {
+        if (node == null) {
             return;
+        }
         s.add(node.val);
-        前序(node.left,s);
-        前序(node.right,s);
+        前序(node.left, s);
+        前序(node.right, s);
     }
 
     /**
-     *左子树—> 根结点 —> 右子树
+     * 左子树—> 根结点 —> 右子树
+     *
      * @param node
      * @param s
      */
-    public static void 中序(TreeNode node,List<Integer> s) {
-        if (node == null)
+    private static void 中序(TreeNode node, List<Integer> s) {
+        if (node == null) {
             return;
-        中序(node.left,s);
+        }
+        中序(node.left, s);
         s.add(node.val);
-        中序(node.right,s);
+        中序(node.right, s);
     }
 
     /**
      * 左子树 —> 右子树 —> 根结点
+     *
      * @param node
      * @param s
      */
-    public static void 后序(TreeNode node,List<Integer> s) {
-        if (node == null)
+    private static void 后序(TreeNode node, List<Integer> s) {
+        if (node == null) {
             return;
-        后序(node.left,s);
-        后序(node.right,s);
+        }
+        后序(node.left, s);
+        后序(node.right, s);
         s.add(node.val);
     }
 
-    public static void 广度(TreeNode node,List<Integer> s) {
-            if(node==null)
-                return ;
-            Queue<TreeNode> queue=new LinkedList<TreeNode>();
-            queue.offer(node);
-            while(!queue.isEmpty()){
-                TreeNode tree=queue.poll();
-                if(tree.left!=null)
-                    queue.offer(tree.left);
-                if(tree.right!=null)
-                    queue.offer(tree.right);
-                s.add(tree.val);
+    private static void 广度(TreeNode node, List<Integer> s) {
+        if (node == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(node);
+        while (!queue.isEmpty()) {
+            TreeNode tree = queue.poll();
+            if (tree.left != null) {
+                queue.offer(tree.left);
             }
-            return ;
+            if (tree.right != null) {
+                queue.offer(tree.right);
+            }
+            s.add(tree.val);
+        }
+        return;
     }
 
     /**
      * 同前序遍历
+     *
      * @param node
      * @param s
      */
-    public static void 深度(TreeNode node,List<Integer> s) {
-        if(node==null)
-            return ;
-        Stack<TreeNode> stack=new Stack<TreeNode>();
+    private static void 深度(TreeNode node, List<Integer> s) {
+        if (node == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(node);
-        while(!stack.isEmpty()){
-            TreeNode tree=stack.pop();
-            if(tree.right!=null)
+        while (!stack.isEmpty()) {
+            TreeNode tree = stack.pop();
+            if (tree.right != null) {
                 stack.push(tree.right);
-            if(tree.left!=null)
+            }
+            if (tree.left != null) {
                 stack.push(tree.left);
+            }
             s.add(tree.val);
         }
-        return ;
+        return;
     }
 
-    public static TreeNode 反转1(TreeNode root) {
+    private static TreeNode 反转1(TreeNode root) {
         if (root == null) {
             return null;
         }
@@ -153,30 +159,40 @@ public class 树 {
 
     }
 
-    public static TreeNode 反转2(TreeNode root) {
+    private static TreeNode 反转2(TreeNode root) {
         if (root == null) {
             return null;
         }
-        Queue<TreeNode> queue=new LinkedList();
+        Queue<TreeNode> queue = new LinkedList();
         queue.offer(root);
 
-        while (queue.size()>0){
+        while (queue.size() > 0) {
             TreeNode poll = queue.poll();
             TreeNode them = poll.left;
-            poll.left= poll.right;
-            poll.right= them;
+            poll.left = poll.right;
+            poll.right = them;
 
-            if (poll.right!=null) {
+            if (poll.right != null) {
                 queue.offer(poll.right);
             }
-            if (poll.left!=null) {
+            if (poll.left != null) {
                 queue.offer(poll.left);
             }
 
         }
         return root;
-        }
+    }
 
+    @Data
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 
 
 }

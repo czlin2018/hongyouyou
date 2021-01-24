@@ -12,21 +12,23 @@ import java.util.Arrays;
  */
 public class 排序 {
     public static void main(String[] args) {
-        int data[]=new int []{1,9,7,3,4,6,2,5,8};
+        int[] data = new int[]{1, 9, 7, 3, 4, 6, 2, 5, 8};
         冒泡(data);
     }
 
-     static void  冒泡 ( int data[]){
-         if (data.length == 0)
-             return ;
-                 for (int i = 0; i < data.length; i++)
-                       for (int j = 0; j < data.length - 1 - i; j++)
-                            if (data[j + 1] < data[j]) {
-                                 int temp = data[j + 1];
-                                data[j + 1] = data[j];
-                                data[j] = temp;
-                           }
-
+    private static void 冒泡(int[] data) {
+        if (data.length == 0) {
+            return;
+        }
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data.length - 1 - i; j++) {
+                if (data[j + 1] < data[j]) {
+                    int temp = data[j + 1];
+                    data[j + 1] = data[j];
+                    data[j] = temp;
+                }
+            }
+        }
         Arrays.stream(data).forEach(System.out::print);
     }
 
