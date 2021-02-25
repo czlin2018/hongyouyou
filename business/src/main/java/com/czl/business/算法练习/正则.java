@@ -22,9 +22,8 @@ public class 正则 {
     private static void 匹配存在() {
         String content = "I am noob from runoob.com.";
         String pattern = "[\\w ]*runoob.*";
-        boolean isMatch = Pattern.matches(pattern, content);
         System.out.println(content.matches(pattern));
-        System.out.println(isMatch);
+        System.out.println(Pattern.matches(pattern, content));
 
 
     }
