@@ -11,6 +11,8 @@ public class 数学 {
     public static void main(String[] args) {
         System.out.println(power(2, -1));
         System.out.println(Add(1, 3));
+        int[][] ints = new int[][]{{}};
+        System.out.println(find(16, ints));
     }
 
 
@@ -45,8 +47,6 @@ public class 数学 {
      * @return
      */
     public static int Add(int num1, int num2) {
-        System.out.println(num1 << 1);
-        System.out.println(num1 >> 1);
         //两个数异或：相当于每一位相加，而不考虑进位；
         //两个数相与，并左移一位：相当于求得进位；
         //将上述两步的结果相加
@@ -58,6 +58,49 @@ public class 数学 {
         }
         return num1;
     }
+
+
+    /**
+     * 二维数组中查找是否存在
+     *
+     * @param target
+     * @param array  从上到下递增，从左到右递增
+     * @return
+     */
+    public static boolean find(int target, int[][] array) {
+        if (array.length == 0) {
+            return false;
+        }
+        if (array[0].length == 0) {
+            return false;
+        }
+
+        int l = array.length;
+        int w = array[0].length;
+        if (array[0][0] > target) {
+            return false;
+        }
+        if (array[l - 1][w - 1] < target) {
+            return false;
+        }
+
+        int ww = 0;
+        int ll = l - 1;
+        while (ll >= 0 && ww <= w) {
+            if (array[ll][ww] == target) {
+                return true;
+            }
+            if (array[ll][ww] < target) {
+                ww++;
+            }
+            if (array[ll][ww] > target) {
+                ll--;
+            }
+        }
+
+        return false;
+    }
+
 
 
 }
