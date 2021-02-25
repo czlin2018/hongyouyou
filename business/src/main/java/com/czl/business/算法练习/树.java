@@ -183,6 +183,21 @@ public class 树 {
         return root;
     }
 
+    private static void 前序1(TreeNode node, List<Integer> s) {
+        if (node == null) {
+            return;
+        }
+        s.add(node.val);
+        前序1(node.left, s);
+        前序1(node.right, s);
+    }
+
+    public static ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
+        ArrayList<Integer> s = new ArrayList<>();
+        前序1(root, s);
+        return s;
+    }
+
     @Data
     static class TreeNode {
         int val;
@@ -193,6 +208,5 @@ public class 树 {
             val = x;
         }
     }
-
 
 }

@@ -12,12 +12,51 @@ package com.czl.business.算法练习;
 class 动态规划 {
 
     public static void main(String[] args) {
+
+        System.out.println(Fibonacci1(4));
+        System.out.println(Fibonacci2(4));
         int 爬楼梯1 = 爬楼梯1(10);
         System.out.println(爬楼梯1);
         int 爬楼梯2 = 爬楼梯2(10);
         System.out.println(爬楼梯2);
         int 爬楼梯3 = 爬楼梯3(10);
         System.out.println(爬楼梯3);
+    }
+
+
+    /**
+     * 斐波那契数列
+     * 递归
+     *
+     * @param n
+     * @return
+     */
+    private static int Fibonacci1(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        return Fibonacci1(n - 1) + Fibonacci1(n - 2);
+    }
+
+    /**
+     * 斐波那契数列
+     * 动态规划
+     *
+     * @param n
+     * @return
+     */
+    private static int Fibonacci2(int n) {
+        int[] result = new int[n + 1];
+        result[0] = 0;
+        result[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            result[i] = result[i - 1] + result[i - 2];
+        }
+        return result[n];
+
     }
 
     /**
